@@ -16,5 +16,18 @@ function createHearts() {
     body.appendChild(heart);
   }
 }
+function launchConfetti() {
+  for(let i=0; i<100; i++){
+    const confetti = document.createElement('div');
+    confetti.innerText = '🎉';
+    confetti.style.position = 'absolute';
+    confetti.style.left = Math.random() * window.innerWidth + 'px';
+    confetti.style.top = Math.random() * -50 + 'px';
+    confetti.style.fontSize = Math.random() * 20 + 10 + 'px';
+    confetti.style.animation = `fall ${3 + Math.random()*3}s linear forwards`;
+    document.body.appendChild(confetti);
+  }
+}
 
+launchConfetti();
 createHearts();
