@@ -1,7 +1,7 @@
 // Reveal hidden message
 function revealMessage() {
   document.getElementById("secret").style.display = "block";
-  launchConfetti(); // optional: fun confetti
+  launchConfetti(); // optional: roses confetti
 }
 
 // Floating hearts dynamically
@@ -20,6 +20,7 @@ function createHearts() {
   }
 }
 
+// Confetti / roses on reveal
 function launchConfetti() {
   for(let i=0; i<50; i++){
     const confetti = document.createElement('div');
@@ -32,7 +33,9 @@ function launchConfetti() {
     document.body.appendChild(confetti);
   }
 }
-function typeWriter(element, speed = 50) {
+
+// Typewriter effect
+function typeWriter(element, speed = 100) {
   const text = element.innerHTML;
   element.innerHTML = '';
   let i = 0;
@@ -46,7 +49,7 @@ function typeWriter(element, speed = 50) {
   type();
 }
 
+// Start floating hearts and typewriter
+createHearts();
 const typewriterElement = document.querySelector('.typewriter');
 typeWriter(typewriterElement, 100); // 100ms per character
-
-createHearts();
