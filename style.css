@@ -61,21 +61,20 @@ button:hover {
   to { opacity: 1; }
 }
 
-/* Typewriter effect */
+/* Typewriter CSS – just style, no animation */
 .typewriter {
   overflow: hidden;
   border-right: .15em solid #d6336c;
   white-space: nowrap;
 }
 
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+/* Floating hearts animation */
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); }
+  100% { transform: translateY(-100px) rotate(360deg); }
 }
 
-@keyframes blink {
-  50% { border-color: transparent }
+/* Confetti / roses animation */
+@keyframes fall {
+  to { transform: translateY(100vh) rotate(360deg); }
 }
-
-/* Floating hearts (dynamic with JS) */
