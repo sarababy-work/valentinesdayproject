@@ -32,5 +32,21 @@ function launchConfetti() {
     document.body.appendChild(confetti);
   }
 }
+function typeWriter(element, speed = 50) {
+  const text = element.innerHTML;
+  element.innerHTML = '';
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  type();
+}
+
+const typewriterElement = document.querySelector('.typewriter');
+typeWriter(typewriterElement, 100); // 100ms per character
 
 createHearts();
