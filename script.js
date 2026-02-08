@@ -1,7 +1,10 @@
+// Reveal hidden message
 function revealMessage() {
   document.getElementById("secret").style.display = "block";
+  launchConfetti(); // optional: fun confetti
 }
-// Create floating hearts dynamically
+
+// Floating hearts dynamically
 function createHearts() {
   const body = document.body;
   for (let i = 0; i < 30; i++) {
@@ -16,10 +19,11 @@ function createHearts() {
     body.appendChild(heart);
   }
 }
+
 function launchConfetti() {
-  for(let i=0; i<100; i++){
+  for(let i=0; i<50; i++){
     const confetti = document.createElement('div');
-    confetti.innerText = '🎉';
+    confetti.innerText = '🌹';
     confetti.style.position = 'absolute';
     confetti.style.left = Math.random() * window.innerWidth + 'px';
     confetti.style.top = Math.random() * -50 + 'px';
@@ -29,5 +33,4 @@ function launchConfetti() {
   }
 }
 
-launchConfetti();
 createHearts();
