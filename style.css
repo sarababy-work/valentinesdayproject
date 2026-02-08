@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  background: rgba(255,255,255,0.85);
+  padding: 30px 25px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 350px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+  color: #d6336c;
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #d6336c;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s forwards;
+}
+
+.delay1 { animation-delay: 1s; }
+.delay2 { animation-delay: 2s; }
+.delay3 { animation-delay: 3s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Floating hearts */
+.hearts::before,
+.hearts::after {
+  content: "❤️ 💕 💖 💘";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: floatHearts 12s linear infinite;
+  font-size: 30px;
+  opacity: 0.3;
+}
+
+@keyframes floatHearts {
+  from { transform: translateY(100%); }
+  to { transform: translateY(-100%); }
+}
