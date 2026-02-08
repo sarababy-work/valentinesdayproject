@@ -77,3 +77,7 @@ button:hover {
   from { transform: translateY(100%); }
   to { transform: translateY(-100%); }
 }
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); }
+  100% { transform: translateY(-100px) rotate(360deg); }
+}
