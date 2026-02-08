@@ -61,26 +61,7 @@ button:hover {
   to { opacity: 1; }
 }
 
-/* Floating hearts */
-.hearts::before,
-.hearts::after {
-  content: "❤️ 💕 💖 💘";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  animation: floatHearts 12s linear infinite;
-  font-size: 30px;
-  opacity: 0.3;
-}
-
-@keyframes floatHearts {
-  from { transform: translateY(100%); }
-  to { transform: translateY(-100%); }
-}
-@keyframes floatUp {
-  0% { transform: translateY(100vh) rotate(0deg); }
-  100% { transform: translateY(-100px) rotate(360deg); }
-}
+/* Typewriter effect */
 .typewriter {
   overflow: hidden;
   border-right: .15em solid #d6336c;
@@ -96,6 +77,5 @@ button:hover {
 @keyframes blink {
   50% { border-color: transparent }
 }
-@keyframes fall {
-  to { transform: translateY(100vh) rotate(360deg); }
-}
+
+/* Floating hearts (dynamic with JS) */
