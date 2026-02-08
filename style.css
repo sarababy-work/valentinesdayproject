@@ -81,3 +81,18 @@ button:hover {
   0% { transform: translateY(100vh) rotate(0deg); }
   100% { transform: translateY(-100px) rotate(360deg); }
 }
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid #d6336c;
+  white-space: nowrap;
+  animation: typing 4s steps(40, end), blink .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
