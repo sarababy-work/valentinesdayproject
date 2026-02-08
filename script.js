@@ -36,18 +36,19 @@ function launchConfetti() {
 
 // Typewriter effect
 function typeWriter(element, speed = 100) {
-  const text = element.innerHTML;
+  const text = element.textContent.trim(); // use textContent instead of innerHTML
   element.innerHTML = '';
   let i = 0;
   function type() {
     if (i < text.length) {
-      element.innerHTML += text.charAt(i);
+      element.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
       i++;
       setTimeout(type, speed);
     }
   }
   type();
 }
+
 
 // Start floating hearts and typewriter
 createHearts();
