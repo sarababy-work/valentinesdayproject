@@ -66,8 +66,8 @@ button:hover {
   overflow: hidden;
   border-right: .15em solid #d6336c;
   white-space: nowrap;
-  animation: typing 4s steps(40, end), blink .75s step-end infinite;
 }
+
 
 @keyframes typing {
   from { width: 0 }
