@@ -20,19 +20,29 @@ function createHearts() {
   }
 }
 
-// Confetti / roses on reveal
 function launchConfetti() {
-  for(let i=0; i<50; i++){
-    const confetti = document.createElement('div');
-    confetti.innerText = '🍫';
-    confetti.style.position = 'absolute';
-    confetti.style.left = Math.random() * window.innerWidth + 'px';
-    confetti.style.top = Math.random() * -50 + 'px';
-    confetti.style.fontSize = Math.random() * 20 + 10 + 'px';
-    confetti.style.animation = `fall ${3 + Math.random()*3}s linear forwards`;
+  for (let i = 0; i < 50; i++) {
+const emojis = ['🍫', '🤎', '✨'];
+confetti.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
+    
+    confetti.style.position = 'fixed'; // IMPORTANT
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.top = '-40px';
+    confetti.style.fontSize = Math.random() * 20 + 18 + 'px';
+    confetti.style.opacity = Math.random();
+    confetti.style.pointerEvents = 'none';
+confetti.style.animation = `fall ${5 + Math.random() * 3}s ease-in forwards`;
+
     document.body.appendChild(confetti);
+
+    // Clean up after animation
+    setTimeout(() => {
+      confetti.remove();
+    }, 6000);
   }
 }
+
 
 // Typewriter effect
 function typeWriter(element, speed = 100) {
