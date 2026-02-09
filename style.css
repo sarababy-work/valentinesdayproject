@@ -132,16 +132,11 @@ button:active,
 /* ==========================
    Floating hearts container
    ========================== */
-.hearts {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0;
-}
-
-span, div {
+/* Only floating elements should ignore pointer events */
+.hearts span, .hearts div {
   pointer-events: none;
 }
+
 
 /* ==========================
    Sparkle animation
