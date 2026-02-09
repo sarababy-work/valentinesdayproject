@@ -1,8 +1,11 @@
 // Reveal hidden message
 function revealMessage() {
-  document.getElementById("secret").style.display = "block";
-  launchConfetti(); // optional: roses confetti
+  const secret = document.getElementById("secret");
+  secret.classList.remove("hidden");
+  secret.style.visibility = "visible";
+  launchConfetti();
 }
+
 
 // Floating hearts dynamically
 function createHearts() {
