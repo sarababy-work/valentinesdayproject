@@ -1,7 +1,6 @@
 // ================================
 // Reveal hidden message + confetti
 // ================================
-// Make sure this is **not inside another function**
 function revealMessage() {
   const secret = document.getElementById("secret");
   secret.classList.remove("hidden");
@@ -10,9 +9,8 @@ function revealMessage() {
   launchConfetti();
 }
 
-
 // ================================
-// Floating hearts continuously with sparkles
+// Floating hearts continuously
 // ================================
 function createHearts() {
   const container = document.querySelector('.hearts');
@@ -27,37 +25,16 @@ function createHearts() {
     heart.style.pointerEvents = 'none';
     heart.style.animation = `floatUp ${5 + Math.random() * 5}s linear infinite`;
     container.appendChild(heart);
-
-    // Add sparkles trailing each heart
-    createSparkles(heart);
   }
 }
 
 // ================================
-// Sparkles trailing a heart
-// ================================
-function createSparkles(parent) {
-  for (let i = 0; i < 3; i++) {
-    const sparkle = document.createElement('span');
-    sparkle.innerText = '✨';
-    sparkle.style.position = 'absolute';
-    sparkle.style.fontSize = Math.random() * 10 + 6 + 'px';
-    sparkle.style.left = Math.random() * 20 - 10 + 'px';
-    sparkle.style.top = Math.random() * 20 - 10 + 'px';
-    sparkle.style.opacity = Math.random() * 0.6 + 0.4;
-    sparkle.style.pointerEvents = 'none';
-    sparkle.style.animation = `sparkle ${2 + Math.random() * 2}s infinite ease-in-out`;
-    parent.appendChild(sparkle);
-  }
-}
-
-// ================================
-// Falling confetti (chocolate + hearts + sparkles)
+// Falling confetti
 // ================================
 function launchConfetti() {
   const emojis = ['🍫', '🤎', '✨'];
   for (let i = 0; i < 50; i++) {
-    const confetti = document.createElement('span');
+    const confetti = document.createElement('span'); // <-- must declare confetti
     confetti.innerText = emojis[Math.floor(Math.random() * emojis.length)];
     confetti.style.position = 'fixed';
     confetti.style.left = Math.random() * 100 + 'vw';
@@ -68,7 +45,6 @@ function launchConfetti() {
     confetti.style.animation = `fall ${5 + Math.random() * 3}s ease-in forwards`;
     document.body.appendChild(confetti);
 
-    // Remove confetti after it falls
     setTimeout(() => confetti.remove(), 6000);
   }
 }
@@ -98,7 +74,6 @@ window.onload = () => {
   const typewriterElement = document.querySelector('.typewriter');
   typeWriter(typewriterElement, 100);
 
-  // Expose revealMessage globally
-  window.revealMessage = revealMessage;
+  // Make sure the button works
+  document.getElementById('revealBtn').onclick = revealMessage;
 };
-
