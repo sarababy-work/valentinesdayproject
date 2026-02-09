@@ -26,7 +26,7 @@ function createHearts() {
     heart.style.animation = `floatUp ${5 + Math.random() * 5}s linear infinite`;
     container.appendChild(heart);
 
-    // Add sparkles to each heart
+    // Add sparkles trailing each heart
     createSparkles(heart);
   }
 }
@@ -35,7 +35,7 @@ function createHearts() {
 // Sparkles trailing a heart
 // ================================
 function createSparkles(parent) {
-  for (let i = 0; i < 3; i++) { // 3 sparkles per heart
+  for (let i = 0; i < 3; i++) {
     const sparkle = document.createElement('span');
     sparkle.innerText = '✨';
     sparkle.style.position = 'absolute';
@@ -66,6 +66,7 @@ function launchConfetti() {
     confetti.style.animation = `fall ${5 + Math.random() * 3}s ease-in forwards`;
     document.body.appendChild(confetti);
 
+    // Remove confetti after it falls
     setTimeout(() => confetti.remove(), 6000);
   }
 }
