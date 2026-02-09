@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #f5f0e6, #efe3d0);
+  background: radial-gradient(circle at top, #f7f2e8, #efe3d0);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -108,5 +108,8 @@ button:active {
     transform: translateY(110vh) rotate(360deg);
     opacity: 0;
   }
+}
+span, div {
+  pointer-events: none;
 }
 
