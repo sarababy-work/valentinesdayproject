@@ -1,3 +1,6 @@
+/* ==========================
+   General reset + background
+   ========================== */
 html, body {
   margin: 0;
   padding: 0;
@@ -15,16 +18,19 @@ body {
   overflow: hidden;
 }
 
-/* Organic chocolate card */
+/* ==========================
+   Container / chocolate card
+   ========================== */
 .container {
-    background: linear-gradient(180deg, #fffaf3, #f3e7d3);
+  background: linear-gradient(180deg, #fffaf3, #f3e7d3);
   padding: 35px 30px;
   max-width: 360px;
   text-align: center;
   box-shadow: 0 18px 40px rgba(75, 46, 43, 0.25);
   border-radius: 50% 40% 60% 45% / 45% 60% 40% 55%;
   animation: blob 8s infinite ease-in-out;
-
+  position: relative;
+  z-index: 1;
 }
 
 /* Blob animation */
@@ -37,12 +43,13 @@ body {
   }
 }
 
-/* Heading */
+/* ==========================
+   Headings & text
+   ========================== */
 h1 {
   color: #4b2e2b; /* dark chocolate */
 }
 
-/* Paragraph text */
 p {
   font-size: 18px;
   color: #6b3f2b; /* cocoa brown */
@@ -50,28 +57,10 @@ p {
   text-shadow: 0 1px 2px rgba(107, 63, 43, 0.15);
 }
 
-
-/* Button – chocolate style */
-button {
-  margin-top: 20px;
-  padding: 12px 22px;
-  border: none;
-  border-radius: 25px;
-  background: linear-gradient(135deg, #6b3f2b, #4b2e2b);
-  color: #fffaf3;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 8px 18px rgba(75, 46, 43, 0.35);
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #8b5e3c, #6b3f2b);
-}
-button:active {
-  transform: scale(0.97);
-}
+/* ==========================
+   Buttons
+   ========================== */
+button,
 .reveal-btn {
   margin-top: 20px;
   padding: 12px 22px;
@@ -85,13 +74,27 @@ button:active {
   transition: all 0.3s ease;
 }
 
+button:hover,
+.reveal-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #8b5e3c, #6b3f2b);
+}
 
-/* Hidden text */
+button:active,
+.reveal-btn:active {
+  transform: scale(0.97);
+}
+
+/* ==========================
+   Hidden message
+   ========================== */
 .hidden {
   visibility: hidden;
 }
 
-/* Fade-in animation */
+/* ==========================
+   Fade-in animation
+   ========================== */
 .fade-in {
   opacity: 0;
   animation: fadeIn 1.2s forwards;
@@ -105,12 +108,15 @@ button:active {
   to { opacity: 1; }
 }
 
-/* Typewriter styling only */
+/* ==========================
+   Typewriter effect
+   ========================== */
 .typewriter {
   overflow: visible;
   white-space: normal;
   border-right: none;
 }
+
 .typewriter::after {
   content: '|';
   display: inline-block;
@@ -123,18 +129,9 @@ button:active {
   25%, 75% { opacity: 0; }
 }
 
-@keyframes fall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-span, div {
-  pointer-events: none;
-}
+/* ==========================
+   Floating hearts container
+   ========================== */
 .hearts {
   position: fixed;
   inset: 0;
@@ -142,15 +139,35 @@ span, div {
   z-index: 0;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
+span, div {
+  pointer-events: none;
 }
+
+/* ==========================
+   Sparkle animation
+   ========================== */
 @keyframes sparkle {
-  0% { opacity: 0.2; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.2); }
-  100% { opacity: 0.2; transform: scale(0.8); }
+  0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(45deg); }
 }
+
+/* ==========================
+   Falling confetti
+   ========================== */
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ==========================
+   Responsive tweaks
+   ========================== */
 @media (max-width: 400px) {
   .container {
     padding: 25px 20px;
@@ -166,9 +183,3 @@ span, div {
     padding: 10px 18px;
   }
 }
-
-@keyframes sparkle {
-  0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
-  50% { opacity: 1; transform: scale(1.2) rotate(45deg); }
-}
-
