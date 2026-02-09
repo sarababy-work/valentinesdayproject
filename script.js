@@ -26,7 +26,6 @@ function createHearts() {
     heart.style.animation = `floatUp ${5 + Math.random() * 5}s linear infinite`;
     container.appendChild(heart);
 
-    // Add sparkles
     createSparkles(heart);
   }
 }
@@ -35,7 +34,7 @@ function createHearts() {
 // Sparkles trailing a heart
 // ================================
 function createSparkles(parent) {
-  for (let i = 0; i < 3; i++) { // 3 sparkles per heart
+  for (let i = 0; i < 3; i++) {
     const sparkle = document.createElement('span');
     sparkle.innerText = '✨';
     sparkle.style.position = 'absolute';
@@ -54,6 +53,7 @@ function createSparkles(parent) {
 // ================================
 function launchConfetti() {
   const emojis = ['🍫', '🤎', '✨'];
+
   for (let i = 0; i < 50; i++) {
     const confetti = document.createElement('span');
     confetti.innerText = emojis[Math.floor(Math.random() * emojis.length)];
@@ -66,7 +66,7 @@ function launchConfetti() {
     confetti.style.animation = `fall ${5 + Math.random() * 3}s ease-in forwards`;
     document.body.appendChild(confetti);
 
-    // Remove after animation
+    // Remove after animation finishes
     setTimeout(() => confetti.remove(), 6000);
   }
 }
@@ -91,13 +91,13 @@ function typeWriter(element, speed = 100) {
 // ================================
 // Initialize page
 // ================================
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
   createHearts();
 
   const typewriterElement = document.querySelector('.typewriter');
   typeWriter(typewriterElement, 100);
 
-  // Ensure the button is clickable
+  // Attach button click properly
   const btn = document.querySelector('.reveal-btn');
   btn.addEventListener('click', revealMessage);
-};
+});
