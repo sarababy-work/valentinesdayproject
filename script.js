@@ -10,7 +10,7 @@ function revealMessage() {
 }
 
 // ================================
-// Floating hearts continuously
+// Floating hearts continuously with sparkles
 // ================================
 function createHearts() {
   const container = document.querySelector('.hearts');
@@ -25,16 +25,37 @@ function createHearts() {
     heart.style.pointerEvents = 'none';
     heart.style.animation = `floatUp ${5 + Math.random() * 5}s linear infinite`;
     container.appendChild(heart);
+
+    // Add sparkles
+    createSparkles(heart);
   }
 }
 
 // ================================
-// Falling confetti
+// Sparkles trailing a heart
+// ================================
+function createSparkles(parent) {
+  for (let i = 0; i < 3; i++) { // 3 sparkles per heart
+    const sparkle = document.createElement('span');
+    sparkle.innerText = '✨';
+    sparkle.style.position = 'absolute';
+    sparkle.style.fontSize = Math.random() * 10 + 6 + 'px';
+    sparkle.style.left = Math.random() * 20 - 10 + 'px';
+    sparkle.style.top = Math.random() * 20 - 10 + 'px';
+    sparkle.style.opacity = Math.random() * 0.6 + 0.4;
+    sparkle.style.pointerEvents = 'none';
+    sparkle.style.animation = `sparkle ${2 + Math.random() * 2}s infinite ease-in-out`;
+    parent.appendChild(sparkle);
+  }
+}
+
+// ================================
+// Falling confetti (chocolate + hearts + sparkles)
 // ================================
 function launchConfetti() {
   const emojis = ['🍫', '🤎', '✨'];
   for (let i = 0; i < 50; i++) {
-    const confetti = document.createElement('span'); // <-- must declare confetti
+    const confetti = document.createElement('span');
     confetti.innerText = emojis[Math.floor(Math.random() * emojis.length)];
     confetti.style.position = 'fixed';
     confetti.style.left = Math.random() * 100 + 'vw';
@@ -45,6 +66,7 @@ function launchConfetti() {
     confetti.style.animation = `fall ${5 + Math.random() * 3}s ease-in forwards`;
     document.body.appendChild(confetti);
 
+    // Remove after animation
     setTimeout(() => confetti.remove(), 6000);
   }
 }
@@ -71,9 +93,11 @@ function typeWriter(element, speed = 100) {
 // ================================
 window.onload = () => {
   createHearts();
+
   const typewriterElement = document.querySelector('.typewriter');
   typeWriter(typewriterElement, 100);
 
-  // Make sure the button works
-  document.getElementById('revealBtn').onclick = revealMessage;
+  // Ensure the button is clickable
+  const btn = document.querySelector('.reveal-btn');
+  btn.addEventListener('click', revealMessage);
 };
