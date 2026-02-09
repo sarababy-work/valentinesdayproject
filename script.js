@@ -1,6 +1,7 @@
 // ================================
 // Reveal hidden message + confetti
 // ================================
+// Make sure this is **not inside another function**
 function revealMessage() {
   const secret = document.getElementById("secret");
   secret.classList.remove("hidden");
@@ -8,6 +9,7 @@ function revealMessage() {
   secret.classList.add("fade-in");
   launchConfetti();
 }
+
 
 // ================================
 // Floating hearts continuously with sparkles
@@ -95,4 +97,8 @@ window.onload = () => {
   createHearts();
   const typewriterElement = document.querySelector('.typewriter');
   typeWriter(typewriterElement, 100);
+
+  // Expose revealMessage globally
+  window.revealMessage = revealMessage;
 };
+
