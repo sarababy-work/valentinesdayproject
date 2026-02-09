@@ -19,22 +19,22 @@ body {
 }
 
 .container {
-  background: white;
-  padding: 30px;
-  max-width: 340px;
-  border-radius: 25px;
-  position: relative;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  background: beige;
+  padding: 35px 30px;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  border-radius: 50% 40% 60% 45% / 45% 60% 40% 55%;
+  animation: blob 8s infinite ease-in-out;
 }
 
-.container::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 40px;
-  border-width: 20px 15px 0;
-  border-style: solid;
-  border-color: white transparent transparent;
+@keyframes blob {
+  0%, 100% {
+    border-radius: 50% 40% 60% 45% / 45% 60% 40% 55%;
+  }
+  50% {
+    border-radius: 60% 45% 50% 55% / 55% 40% 60% 45%;
+  }
 }
 
 
