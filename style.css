@@ -72,6 +72,18 @@ button:hover {
 button:active {
   transform: scale(0.97);
 }
+.reveal-btn {
+  margin-top: 20px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #6b3f2b, #4b2e2b);
+  color: #fffaf3;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(75, 46, 43, 0.35);
+  transition: all 0.3s ease;
+}
 
 
 /* Hidden text */
@@ -99,6 +111,17 @@ button:active {
   white-space: normal;
   border-right: none;
 }
+.typewriter::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
 
 @keyframes fall {
   0% {
@@ -112,4 +135,36 @@ button:active {
 span, div {
   pointer-events: none;
 }
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+@keyframes sparkle {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.2; transform: scale(0.8); }
+}
+@media (max-width: 400px) {
+  .container {
+    padding: 25px 20px;
+    max-width: 90%;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+}
+
 
