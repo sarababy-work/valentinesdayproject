@@ -9,7 +9,7 @@ function createHearts() {
   const body = document.body;
   for (let i = 0; i < 30; i++) {
     const heart = document.createElement('div');
-    heart.innerText = '❤️';
+    heart.innerText = '🤎';
     heart.style.position = 'absolute';
     heart.style.fontSize = Math.random() * 30 + 20 + 'px';
     heart.style.left = Math.random() * window.innerWidth + 'px';
@@ -24,7 +24,7 @@ function createHearts() {
 function launchConfetti() {
   for(let i=0; i<50; i++){
     const confetti = document.createElement('div');
-    confetti.innerText = '🌹';
+    confetti.innerText = '🍫';
     confetti.style.position = 'absolute';
     confetti.style.left = Math.random() * window.innerWidth + 'px';
     confetti.style.top = Math.random() * -50 + 'px';
