@@ -167,4 +167,8 @@ span, div {
   }
 }
 
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(45deg); }
+}
 
