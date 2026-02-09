@@ -76,7 +76,7 @@ button:active {
 
 /* Hidden text */
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 /* Fade-in animation */
