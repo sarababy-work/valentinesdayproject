@@ -8,7 +8,7 @@ function revealMessage() {
 function createHearts() {
   const body = document.body;
   for (let i = 0; i < 30; i++) {
-    const heart = document.createElement('div');
+const container = document.querySelector('.hearts');
     heart.innerText = '🤎';
     heart.style.position = 'absolute';
     heart.style.fontSize = Math.random() * 30 + 20 + 'px';
@@ -16,7 +16,7 @@ function createHearts() {
     heart.style.top = Math.random() * window.innerHeight + 'px';
     heart.style.opacity = Math.random();
     heart.style.animation = `floatUp ${5 + Math.random() * 5}s linear infinite`;
-    body.appendChild(heart);
+container.appendChild(heart);
   }
 }
 
